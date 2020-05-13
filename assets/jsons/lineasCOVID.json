@@ -1,0 +1,200 @@
+[
+  {
+    "Entidad": "Linea Nacional",
+    "LineaEstatal": "800-0044-800",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Aguascalientes",
+    "LineaEstatal": "449-453-4583,449-352-0915,449-105-5974,449-453-2225",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Baja California",
+    "LineaEstatal": "449-453-4583",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Baja California Sur",
+    "LineaEstatal": "612-199-5386",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Campeche",
+    "LineaEstatal": "-",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Chiapas",
+    "LineaEstatal": "800-722-2020",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Chihuahua",
+    "LineaEstatal": "-",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Ciudad de México",
+    "LineaEstatal": "5337-1845",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Coahuila",
+    "LineaEstatal": "-",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Colima",
+    "LineaEstatal": "01 800 337 2583,312-316-2223",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Durango",
+    "LineaEstatal": "618-817-3444",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Estado de México",
+    "LineaEstatal": "899-900-3200",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Guanajuato",
+    "LineaEstatal": "800-627-2583",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Guerrero",
+    "LineaEstatal": "-",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Hidalgo",
+    "LineaEstatal": "-",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Jalisco",
+    "LineaEstatal": "333-823-3220",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Michoacán",
+    "LineaEstatal": "800-123-2890",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Morelos",
+    "LineaEstatal": "-",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Nayarit",
+    "LineaEstatal": "311-214-0927",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Nuevo León",
+    "LineaEstatal": "818-361-0058,818-361-0095",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Oaxaca",
+    "LineaEstatal": "516-8242",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Puebla",
+    "LineaEstatal": "5337-1845",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Querétaro",
+    "LineaEstatal": "-",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Quintana Roo",
+    "LineaEstatal": "800-832-9198",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "San Luis Potosí",
+    "LineaEstatal": "800-123-8888",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Sinaloa",
+    "LineaEstatal": "-",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Sonora",
+    "LineaEstatal": "800-911-9300",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Tabasco",
+    "LineaEstatal": "-",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Tamaulipas",
+    "LineaEstatal": "834-318-6320,834-318-6321",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Tlaxcala",
+    "LineaEstatal": "-",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Veracruz",
+    "LineaEstatal": "800-012-3456",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Yucatán",
+    "LineaEstatal": "800-982-2826",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  },
+  {
+    "Entidad": "Zacatecas",
+    "LineaEstatal": "800-967-2583",
+    "LineaNacional": "800-0044-800",
+    "LineaCR": "911"
+  }
+]
