@@ -56,7 +56,7 @@ export class SurveyResultComponent extends React.Component {
     try {
       const {id} = this.props.route.params;
       const result = await Share.share({
-        message: id,
+        message: id.split('.')[0],
       });
       if (result.action === Share.sharedAction) {
         if (result.activityType) {
@@ -78,7 +78,7 @@ export class SurveyResultComponent extends React.Component {
       <SafeAreaView style={styles.container}>
         <View style={styles.infoComponent}>
           <Text style={[styles.text, styles.folioTitle]}>Folio</Text>
-          <Text style={[styles.text, styles.folio]}>{id}</Text>
+          <Text style={[styles.text, styles.folio]}>{id.split('.')[0]}</Text>
           <Text style={[styles.text, styles.shareText]}>
             Conserva este folio o compartelo
           </Text>

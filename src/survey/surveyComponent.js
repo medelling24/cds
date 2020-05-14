@@ -112,11 +112,12 @@ class SurveyComponent extends React.Component {
       const {position} = this.props.route.params;
       const evidence = new Evidence();
 
+      const timestamp = parseInt(position.timestamp.toString().split('.')[0]);
       evidence.altitude = position.coords.altitude;
       evidence.latitude = position.coords.latitude;
       evidence.longitude = position.coords.longitude;
-      evidence.timestamp = position.timestamp;
-      evidence.id = `${challenge.id}_${position.timestamp}.xml`;
+      evidence.timestamp = timestamp;
+      evidence.id = `${challenge.id}_${timestamp}.xml`;
       evidence.userId = this.props.user.id;
       evidence.challengeId = challenge.id;
       evidence.type = 3;
