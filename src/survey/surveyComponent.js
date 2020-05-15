@@ -7,7 +7,7 @@ import {Header} from '../shared/header';
 import {COLOR} from '../shared/styleGuide';
 import {createStructuredSelector} from 'reselect';
 import {Button} from '../shared/button';
-import {addEvidence, createEvidence, updateEvidence} from './actions';
+import {createEvidence, updateEvidence} from './actions';
 import {Evidence} from '../shared/classes';
 import {inProgressEvidenceSelector} from './selector';
 import {challengesSelector, userSelector} from '../home/selector';
@@ -193,7 +193,6 @@ class SurveyComponent extends React.Component {
           const risk = calculateRisk(inProgressEvidence.surveyAnswers);
           inProgressEvidence.level = risk.level;
           this.props.updateEvidence(inProgressEvidence);
-          this.props.addEvidence(inProgressEvidence);
           return this.props.navigation.navigate('SurveyResult', {
             id: inProgressEvidence.id,
             risk: risk.risk,
@@ -375,7 +374,6 @@ const mapStateToProps = createStructuredSelector({
 const mapDispatchToProps = (dispatch) => {
   return {
     createEvidence: (evidence) => dispatch(createEvidence(evidence)),
-    addEvidence: (evidence) => dispatch(addEvidence(evidence)),
     updateEvidence: (evidence) => dispatch(updateEvidence(evidence)),
   };
 };

@@ -26,8 +26,8 @@ export const generateXml = (evidence) => {
   const xmlObj = {
     survey: {
       '@version': survey.$.version,
+      topic: [...topics],
     },
-    topic: [...topics],
   };
   const feed = builder.create(xmlObj, {encoding: 'utf-8'});
   const xml = feed.end({pretty: true});

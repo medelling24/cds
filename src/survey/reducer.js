@@ -27,6 +27,18 @@ const evidences = (state = initialState, action) => {
         allEvidences: [...state.allEvidences, action.evidence],
       };
     }
+    case 'UPDATE_SYNC': {
+      return {
+        ...state,
+        currentEvidence: action.evidence,
+        allEvidences: state.allEvidences.map((e) => {
+          if (e.id === action.evidence.id) {
+            e.isSync = true;
+          }
+          return e;
+        }),
+      };
+    }
     default: {
       return state;
     }

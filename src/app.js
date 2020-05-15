@@ -27,7 +27,7 @@ import ChallengesComponent from './challenges/challengesComponent';
 import ChallengeComponent from './challenges/challengeComponent';
 import SurveyComponent from './survey/surveyComponent';
 import {COLOR} from './shared/styleGuide';
-import {SurveyResultComponent} from './survey/surveyResultComponent';
+import SurveyResultComponent from './survey/surveyResultComponent';
 import {PhoneNumbersComponent} from './instructions/phoneNumbersComponent';
 import {RiskScaleComponent} from './instructions/riskScaleComponent';
 

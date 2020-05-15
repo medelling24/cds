@@ -1,9 +1,17 @@
 import {SafeAreaView} from 'react-native-safe-area-context';
 import * as React from 'react';
-import {View, StyleSheet, Share, Text} from 'react-native';
+import {View, StyleSheet, Share, Text, ActivityIndicator} from 'react-native';
+import NetInfo from '@react-native-community/netinfo';
 import {Button} from '../shared/button';
 import {COLOR} from '../shared/styleGuide';
 import {IconButton} from '../shared/iconButton';
+import {generateXml} from '../shared/generateXml';
+import {createStructuredSelector} from 'reselect';
+import {challengesSelector, userSelector} from '../home/selector';
+import {inProgressEvidenceSelector} from './selector';
+import {addEvidence, createEvidence, updateEvidence} from './actions';
+import {connect} from 'react-redux';
+import {postSurvey} from '../shared/api';
 
 const styles = StyleSheet.create({
   container: {flex: 1, paddingLeft: 20, paddingRight: 20},
@@ -51,22 +59,43 @@ const styles = StyleSheet.create({
   risk: {fontSize: 40, color: COLOR.GREY_DARK, fontFamily: 'quicksand-bold'},
 });
 
-export class SurveyResultComponent extends React.Component {
+class SurveyResultComponent extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      loading: false,
+    };
+
+    NetInfo.fetch().then((state) => {
+      //if (state.isConnected && !this.props.user) {
+      if (state.isConnected) {
+        this.uploadEvidence();
+      } else {
+        const evidence = this.props.inProgressEvidence;
+        this.props.addEvidence(evidence); // Insert in the queue to sync
+      }
+    });
+  }
+
+  uploadEvidence() {
+    const evidence = this.props.inProgressEvidence;
+    this.setState({loading: true});
+    generateXml(evidence).then(() => {
+      postSurvey(evidence).then(() => {
+        this.setState({loading: false});
+        evidence.isSync = true;
+        this.props.updateEvidence(evidence);
+        this.props.addEvidence(evidence); // Is this need it? maybe keep it to have track for all the evidences
+      });
+    });
+  }
+
   onShare = async () => {
     try {
       const {id} = this.props.route.params;
-      const result = await Share.share({
+      await Share.share({
         message: id.split('.')[0],
       });
-      if (result.action === Share.sharedAction) {
-        if (result.activityType) {
-          // shared with activity type of result.activityType
-        } else {
-          // shared
-        }
-      } else if (result.action === Share.dismissedAction) {
-        // dismissed
-      }
     } catch (error) {
       alert(error.message);
     }
@@ -74,6 +103,7 @@ export class SurveyResultComponent extends React.Component {
 
   render() {
     const {id, risk} = this.props.route.params;
+    const {loading} = this.state;
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.infoComponent}>
@@ -95,19 +125,40 @@ export class SurveyResultComponent extends React.Component {
           <Text style={[styles.text, styles.risk]}>{risk}</Text>
         </View>
         <View style={styles.buttonComponent}>
-          <Button
-            buttonStyle={styles.button}
-            textStyle={[styles.text, styles.buttonText]}
-            text={'Continuar'}
-            onPress={() => {
-              this.props.navigation.reset({
-                index: 0,
-                routes: [{name: 'Home'}],
-              });
-            }}
-          />
+          {!loading && (
+            <Button
+              buttonStyle={styles.button}
+              textStyle={[styles.text, styles.buttonText]}
+              text={'Continuar'}
+              onPress={() => {
+                this.props.navigation.reset({
+                  index: 0,
+                  routes: [{name: 'Home'}],
+                });
+              }}
+            />
+          )}
+          {loading && <ActivityIndicator size="large" color={COLOR.PRIMARY} />}
         </View>
       </SafeAreaView>
     );
   }
 }
+
+const mapStateToProps = createStructuredSelector({
+  challenges: challengesSelector,
+  user: userSelector,
+  inProgressEvidence: inProgressEvidenceSelector,
+});
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateEvidence: (evidence) => dispatch(updateEvidence(evidence)),
+    addEvidence: (evidence) => dispatch(addEvidence(evidence)),
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(SurveyResultComponent);
